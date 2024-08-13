@@ -1,0 +1,99 @@
+/* style2.css */
+
+/* Importing a different font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e90ff, #ff1493); /* Gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+header h1 {
+    font-size: 2em; /* Adjusted size */
+    color: #333;
+}
+
+/* Form section styling */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 0 20px; /* Add padding for better spacing */
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Increased size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Centered if labels are beside */
+}
+
+.form-group input {
+    width: 100%;
+/    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.1em; /* Slightly larger input text */
+}
+
+/* Button styling */
+button {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #4682b4;
+}
+
+/* Terms and conditions link */
+.form-group a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+
+/* Password strength indicator */
+#password-strength {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #ff0000;
+}

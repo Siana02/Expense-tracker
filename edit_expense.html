@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style5.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Grey+Qo&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<title>Expense Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="expense">Expense</span>
+            <span class="tracker">Tracker</span>
+        </h1>
+    </header>
+    <header>
+        <h2>Edit Expense</h2>
+    </header>
+    <section>
+        <form action="/edit_expense" method="POST">
+            <label for="id">Expense ID:</label>
+            <input type="text" id="id" name="id" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <button type="submit">Edit Expense</button>
+        </form>
+    </section>
+</body>
+</html>

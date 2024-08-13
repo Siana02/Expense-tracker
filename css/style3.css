@@ -1,0 +1,79 @@
+/* Import the Play font */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+/* General Body Styles */
+body {
+    font-family: 'Play', sans-serif;
+    background: linear-gradient(135deg, #3498db, #8e44ad); /* Gradient matching the landing page */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+header h2 {
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+/* Center the form section */
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: auto; /* Center the form vertically */
+    margin-top: 20px; /* Add a top margin to separate from the header */
+}
+
+/* Form label and input styles */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

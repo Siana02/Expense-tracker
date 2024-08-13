@@ -1,0 +1,84 @@
+/* Apply gradient background to the entire page */
+body {
+    background: linear-gradient(135deg, #1e90ff, #ff1493); /* Gradient background */
+    font-family: 'Play', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color:linear-gradient(135deg, #ff7e5f, #feb47b);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Styling for Expense and Tracker */
+.expense {
+    color: #ff1493; /* Color for "Expense" */
+}
+
+.tracker {
+    color: #1e90ff; /* Color for "Tracker" */
+}
+
+/* Table styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: linear-gradient(135deg, #ff7e5f, #feb47b); /* White background for table */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button styling */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Ensure footer is centered and has spacing */
+footer {
+    text-align: center;
+    padding: 20px;
+}
