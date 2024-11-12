@@ -1,0 +1,71 @@
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Caveat:wght@400;700&display=swap');
+/* General body styling */
+body {
+    font-family: 'Play', sans-serif;
+    background: linear-gradient(to right, #87CEFA, #FFB6C1); /* Blue and Pink gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Header styling */
+h1, h2, h3 {
+    font-family: 'Caveat', cursive;
+    color: #2e3a8c; /* Dark Blue color for headings */
+    text-align: center;
+}
+
+/* Link styling */
+a {
+    font-family: 'Play', sans-serif;
+    text-decoration: none;
+    color: #ff4da6; /* Pink color for links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff1a8c; /* Darker pink for hover effect */
+}
+
+/* Button styling */
+button {
+    font-family: 'Play', sans-serif;
+    background-color: #4F94D4; /* Soft Blue background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2e5d92; /* Darker blue for button hover */
+}
+
+/* Paragraph styling */
+p {
+    font-family: 'Play', sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section background with a soft pink */
+section {
+    background-color: #FFEBEE;
+    padding: 40px;
+    border-radius: 10px;
+  }
