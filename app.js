@@ -41,7 +41,6 @@ function authenticateToken(req, res, next) {
         res.status(400).json({ message: 'Invalid token' });
     }
 }
-
 // POST /api/auth/register: Register a new user
 app.post('/api/auth/register', async (req, res) => {
     const { username, password } = req.body;
@@ -49,16 +48,29 @@ app.post('/api/auth/register', async (req, res) => {
     // Check if the user already exists
     db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) => {
         if (error) return res.status(500).json({ message: 'Database error', error });
+
+        // If user already exists
         if (results.length > 0) return res.status(400).json({ message: 'Username already exists' });
 
         // Hash the password and insert the new user into the database
         const hashedPassword = await bcrypt.hash(password, 10);
+
         db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], (error, results) => {
             if (error) return res.status(500).json({ message: 'Database error', error });
-            res.status(201).json({ message: 'User registered successfully' });
+
+            // Create a token for the user and return a success message
+            const token = jwt.sign({ username: username }, JWT_SECRET, { expiresIn: '1h' });
+
+            // Send the response with the token and a success message
+            res.status(201).json({
+                message: 'User registered successfully',
+                token: token, // Include token in the response
+                redirectTo: '/dashboard.html' // Provide the route to redirect to
+            });
         });
     });
 });
+
 
 // POST /api/auth/login: User login and JWT generation
 app.post('/api/auth/login', (req, res) => {
