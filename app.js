@@ -41,21 +41,26 @@ function authenticateToken(req, res, next) {
         res.status(400).json({ message: 'Invalid token' });
     }
 }
+
 // POST /api/auth/register: Register a new user
 app.post('/api/auth/register', async (req, res) => {
-    const { username, password } = req.body;
+    const { username, password, email } = req.body;
 
-    // Check if the user already exists
-    db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) => {
+    // Check if the username or email already exists in the database
+    db.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email], async (error, results) => {
         if (error) return res.status(500).json({ message: 'Database error', error });
 
-        // If user already exists
-        if (results.length > 0) return res.status(400).json({ message: 'Username already exists' });
+        // If either the username or email already exists
+        if (results.length > 0) {
+            return res.status(400).json({
+                message: results[0].username === username ? 'Username already exists' : 'Email already exists'
+            });
+        }
 
         // Hash the password and insert the new user into the database
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], (error, results) => {
+        db.query('INSERT INTO users (username, password, email) VALUES (?, ?, ?)', [username, hashedPassword, email], (error, results) => {
             if (error) return res.status(500).json({ message: 'Database error', error });
 
             // Create a token for the user and return a success message
