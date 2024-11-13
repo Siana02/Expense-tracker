@@ -1,0 +1,124 @@
+/* Apply Comfortaa font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+
+/* General reset and body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #6a5acd, #ff69b4); /* Blue to Pink gradient */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header .expense, header .tracker {
+    font-weight: bold;
+}
+
+/* Dashboard header */
+.dashboard-header {
+    text-align: center;
+    margin-top: 40px;
+}
+.dashboard-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ff69b4; /* Pink for greeting */
+}
+.dashboard-header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Button link styles */
+.button-link {
+    text-decoration: none;
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+.button-link:hover {
+    background-color: #d62d6b;
+}
+
+/* Expense Table */
+.expense-table {
+    margin: 20px auto;
+    max-width: 80%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+table th {
+    background-color: #6a5acd; /* Blue for header */
+    color: white;
+}
+.no-expenses {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6a5acd; /* Blue color */
+    font-weight: bold;
+}
+
+/* Chart section */
+.expense-overview {
+    margin-top: 30px;
+    text-align: center;
+}
+canvas {
+    border-radius: 8px;
+}
+
+/* Expense Summary */
+.expense-summary {
+    margin-top: 40px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+.expense-summary p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background: #6a5acd;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer .button-link {
+    margin: 0;
+}
