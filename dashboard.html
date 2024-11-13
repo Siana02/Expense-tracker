@@ -58,7 +58,15 @@
     <footer>
         <a href="add_expense.html" class="button-link">Add Expense</a>
     </footer>
-
+<script>
+    // Fetch the user's name from the server
+    fetch('/dashboard')
+        .then(response => response.json())
+        .then(data => {
+            // Set the user's name dynamically in the HTML
+            document.querySelector('.dashboard-header h2').textContent = `Welcome, ${data.userName}!`;
+        });
+</script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/expense-chart.js"></script> <!-- Add this script to render the chart -->
     <script src="js/dashboard.js"></script> <!-- New script to handle actions -->
