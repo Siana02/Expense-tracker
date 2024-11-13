@@ -55,3 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Registration form submitted successfully!');
     });
 });
+
+// Example of frontend handling registration and redirecting to dashboard
+function registerUser(username, password, email) {
+    fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password, email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'User registered successfully') {
+            // Store token in localStorage for later use (optional if JWT used)
+            localStorage.setItem('token', data.token);
+
+            // Redirect user to the dashboard
+            window.location.href = data.redirectTo; // '/dashboard.html'
+        } else {
+            // If the user already exists, display the message
+            alert(data.message); // "Username or Email already exists"
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Adding this logic to submit the registration form and trigger the registration process
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+
+    // Call the registerUser function to register the user
+    registerUser(username, password, email);
+});
