@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style6.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="expense">Expense</span>
+            <span class="tracker">Tracker</span>
+        </h1>
+    </header>
+
+    <section class="dashboard-header">
+        <h2>Welcome, <%= userName %>!</h2> <!-- Dynamically display the user's name -->
+        <p>Your personalized dashboard</p>
+        <a href="add_expense.html" class="button-link">Add New Expense</a>
+        <a href="edit_profile.html" class="button-link">Edit Profile</a>
+    </section>
+
+    <section class="expense-table">
+        <h2>View Expenses</h2>
+        <input type="search" id="expenseSearch" placeholder="Search expenses..." class="search-bar">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Expense data will be populated here dynamically -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="expense-overview">
+        <h2>Expense Overview</h2>
+        <canvas id="expenseChart" width="400" height="200"></canvas>
+    </section>
+
+    <section class="expense-summary">
+        <h2>Summary</h2>
+        <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
+        <p>Budget Remaining: $<span id="budgetRemaining">500.00</span></p>
+    </section>
+
+    <footer>
+        <a href="add_expense.html" class="button-link">Add Expense</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/expense-chart.js"></script> <!-- Add this script to render the chart -->
+    <script src="js/dashboard.js"></script> <!-- New script to handle actions -->
+</body>
+  </html>
