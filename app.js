@@ -47,7 +47,7 @@ app.post('/api/auth/register', async (req, res) => {
     const { username, password, email } = req.body;
 
     // Check if the username or email already exists in the database
-    db.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email], async (error, results) => {
+    db.query('SELECT * FROM Users WHERE username = ? OR email = ?', [username, email], async (error, results) => {
         if (error) return res.status(500).json({ message: 'Database error', error });
 
         // If either the username or email already exists
@@ -60,7 +60,7 @@ app.post('/api/auth/register', async (req, res) => {
         // Hash the password and insert the new user into the database
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        db.query('INSERT INTO users (username, password, email) VALUES (?, ?, ?)', [username, hashedPassword, email], (error, results) => {
+        db.query('INSERT INTO Users (username, password, email) VALUES (?, ?, ?)', [username, hashedPassword, email], (error, results) => {
             if (error) return res.status(500).json({ message: 'Database error', error });
 
             // Create a token for the user and return a success message
@@ -82,7 +82,7 @@ app.post('/api/auth/login', (req, res) => {
     const { username, password } = req.body;
 
     // Find user by username in the database
-    db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) => {
+    db.query('SELECT * FROM Users WHERE username = ?', [username], async (error, results) => {
         if (error) return res.status(500).json({ message: 'Database error', error });
         if (results.length === 0) return res.status(400).json({ message: 'Invalid username or password' });
 
