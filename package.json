@@ -1,7 +1,11 @@
+"scripts": {
+  "start": "node app.js",
+  "dev": "nodemon app.js"
+}
 {
   "name": "expense-tracker",
   "version": "1.0.0",
-  "description": "## Description: In this week, you will delve into backend development using server-side scripting with Node.js and Express.js. You will set up a basic Express.js server and create API endpoints for user authentication, expense management, and expense calculations. This will provide hands-on experience with backend development, API design, and routing using Express.js.",
+  "description": "Description: In this week, you will delve into backend development using server-side scripting with Node.js and Express.js. You will set up a basic Express.js server and create API endpoints for user authentication, expense management, and expense calculations. This will provide hands-on experience with backend development, API design, and routing using Express.js.",
   "main": "app.js",
   
   "dependencies": {
