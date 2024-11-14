@@ -1,7 +1,4 @@
-"scripts": {
-  "start": "node app.js",
-  "dev": "nodemon app.js"
-}
+
 {
   "name": "expense-tracker",
   "version": "1.0.0",
