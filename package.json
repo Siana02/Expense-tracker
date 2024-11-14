@@ -158,7 +158,13 @@
     "wrappy": "^1.0.2",
     "yallist": "^4.0.0"
   },
+  {
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Expense tracker app",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -172,3 +178,4 @@
   },
   "homepage": "https://github.com/Siana02/Expense-tracker#readme"
 }
+
