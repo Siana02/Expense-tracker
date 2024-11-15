@@ -8,13 +8,16 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
 
 // Database connection configuration
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT
-});
+const db = mysql.createConnection(
+    process.env.DB_URI || {
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT,
+    }
+);
+
 
 // Connect to the database
 db.connect((err) => {
