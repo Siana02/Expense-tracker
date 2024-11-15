@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style6.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="expense">Expense</span>
+            <span class="tracker">Tracker</span>
+        </h1>
+    </header>
+</head>
+    <header>
+        <h2>View Expenses</h2>
+    </header>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Expense data will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Expense Overview</h2>
+        <canvas id="expenseChart" width="400" height="200"></canvas>
+    </section>
+    <footer>
+ <a href="/add-expense" class="button-link">Add Expense</a>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/expense-chart.js"></script> <!-- Add this script -->
+</body>
+</html>
